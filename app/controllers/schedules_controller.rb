@@ -1,4 +1,4 @@
-class ScheduleController < ApplicationController
+class SchedulesController < ApplicationController
   def index
   end
 
