@@ -16,4 +16,13 @@ class BoatsController < ApplicationController
 
   def show
   end
+
+
+  	private
+
+  	def boat_params
+  	params.require(:user).permit(:name, :location, :containers, :user_id, :job_id)
+  	end
+
+
 end
