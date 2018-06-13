@@ -1,9 +1,8 @@
 <h1>Add a new boat</h1>
 
 <%= form_for @boat do |b| %>
-	Boat name:<%= b.text_field :name %>
-	Boat location: <%= b.text_field :location %>
-	# of containers<%= b.text_field :containers %>
+	Boat name:<%= b.text_field :name %><br>
+	Boat location: <%= b.text_field :location %><br>
+	# of containers<%= b.text_field :containers %><br>
 	<%= b.submit 'Create boat' %>
-
 	<% end %>

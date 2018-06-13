@@ -1,7 +1,7 @@
 <H1>Here is a list of all the Jobs</H1>
 
 
- <% @job.each do |j| %>
+<% @job.each do |j| %>
 <b>Job#</b> <%= j.id %> </a><br>
 <b>Description:</b> <%= j.description %><br>
 <b>Cost:</b> <%= j.cost %><br>
@@ -11,5 +11,5 @@
 <a href="/jobs/<%= j.id %>/edit"><b>Edit Job</b></a>
  <br>
  <hr>
+<% end %>
 
- <% end %>
