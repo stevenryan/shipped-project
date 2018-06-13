@@ -12,7 +12,7 @@ class JobsController < ApplicationController
   	@job = Job.new(job_params)
     @job.user_id = current_user.id 
     if @job.save
-      redirect_to "/"
+      redirect_to "/jobs/"
     else
       render "/jobs/new"
     end
@@ -21,11 +21,21 @@ class JobsController < ApplicationController
   def edit
     @job = Job.find(params[:id])
     @boats = Boat.all
-    
+  end
+
+  def update
+    @job = Job.find(params[:id])
+    @job.user_id = current_user.id 
+    if @job.update(job_params)
+      redirect_to "/jobs/"
+    else
+      redirect_to "/jobs/#{job_id}/edit" 
+    end
   end
 
   def show
      @job = Job.find(params[:id])
+     @boats = Boat.all
   end
 
 
