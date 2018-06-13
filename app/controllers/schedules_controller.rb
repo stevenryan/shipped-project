@@ -1,6 +1,5 @@
 class SchedulesController < ApplicationController
   def index
-
   end
 
   def new
@@ -16,7 +15,6 @@ class SchedulesController < ApplicationController
     else
       render "/schedules/new"
     end
-
   end
 
   def show
@@ -25,6 +23,11 @@ class SchedulesController < ApplicationController
   def edit
   end
 
+  def update
+  end
+
+  def destroy
+  end
 
   private
 	def schedule_params

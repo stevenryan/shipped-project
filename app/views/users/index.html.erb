@@ -1,4 +1,10 @@
-<%   @users.each do |f| %>
-<%= f.name %>
-<%= f.email %>
+<h1>List of All Users</h1>
+
+<% @users.each do |u| %>
+<div class="">
+  <div><a href='/users/<%= u.id %>'><%= u.name  %></a></div>
+</div>
+<div class="">
+  <%= u.email %>
+</div>
 <% end %>
