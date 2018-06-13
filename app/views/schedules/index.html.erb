@@ -1,1 +1,15 @@
 <h1>Work Schedule</h1>
+
+<% @schedules.each do |s| %>
+  <div class=""><strong>Date: </strong><%= s.date %></div>
+  <div class=""><strong>Origin: </strong><%= s.origin %></div>
+  <div class=""><strong>Destination: </strong><%= s.destination %></div>
+
+  <br>
+  <% this_name = User.find(s.job.user_id) %>
+  <div class=""><strong>Boat: </strong><%= s.boat.name %></div>
+  <div><strong>Job: </strong><%= s.job.description %></div>
+  <div><strong>Poster: </strong><%= this_name.name %></div>
+  <br>
+
+<% end %>
