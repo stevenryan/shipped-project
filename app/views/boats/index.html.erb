@@ -1,6 +1,8 @@
 <h1>List of all Boats</h1>
 
-<%= @boats.each do |b| %>
-	<%= link_to b.name, b %>
+<% @boats.each do |b| %>
+	<div><%= link_to b.name, b %></div>
+	<div><%=  b.location %></div>
+	<div><%=  b.containers %></div>
 
 	<% end %>
