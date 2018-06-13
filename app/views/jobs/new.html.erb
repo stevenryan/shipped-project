@@ -1,2 +1,9 @@
-<h1>Jobs#new</h1>
-<p>Find me in app/views/jobs/new.html.erb</p>
+<H1>Create a New Job</H1>
+
+ <%= form_for @job do |f| %>
+ How Many Containers Needed: <%= f.text_field :containers_needed %><br>
+ How Much will it Cost $<%= f.text_field :cost %><br>
+ Description of the Job: <%= f.text_area :description %><br>
+ List of Boats <%= f.select :boat_id, options_from_collection_for_select( @boats, "id", "name") %><br>
+ <%= f.submit "Create A Job" %>
+ <% end %>
