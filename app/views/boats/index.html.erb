@@ -1,7 +1,8 @@
 <h1>List of all Boats</h1>
 
 <% @boats.each do |b| %>
-	<div>Boat name: <u><%= link_to b.name, b %></u></div>
-	<div>Boat location: <strong><%=  b.location %></strong></div>
-	<div>Number of containers: <strong><%=  b.containers %></strong></div><br>
+	<div><strong>Boat name:</strong> <u><%= link_to b.name, b %></u></div>
+	<div><strong>Owner:</strong> <%= b.user.name %></div>
+	<div><strong>Boat location:</strong> <%=  b.location %></div>
+	<div><strong>Number of containers:</strong> <%=  b.containers %></div><br>
 	<% end %>

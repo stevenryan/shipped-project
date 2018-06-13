@@ -1,5 +1,8 @@
 class SchedulesController < ApplicationController
   def index
+    @schedules = Schedule.all
+    @users = User.all
+    @boats = Boat.all
   end
 
   def new
