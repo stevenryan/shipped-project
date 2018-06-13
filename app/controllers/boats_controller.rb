@@ -8,10 +8,17 @@ class BoatsController < ApplicationController
   end
 
   def edit
+    @boat = Boat.find(params[:id])
   end
 
   def create
-  	@boat= Boat.new(boat_params)
+  	boat = Boat.new(boat_params)
+    boat.user_id = current_user.id
+    if boat.save 
+      redirect_to '/users#show'
+    else
+      render '/boats/new'
+    end
   end
 
   def show
@@ -21,8 +28,7 @@ class BoatsController < ApplicationController
   	private
 
   	def boat_params
-  	params.require(:user).permit(:name, :location, :containers, :user_id, :job_id)
+  	params.require(:boat).permit(:name, :location, :containers, :user_id, :job_id)
   	end
-
 
 end
