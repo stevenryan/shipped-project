@@ -1,2 +1,14 @@
-<h1>Jobs#index</h1>
-<p>Find me in app/views/jobs/index.html.erb</p>
+<H1>Here is a list of all the Jobs</H1>
+
+
+ <% @job.each do |j| %>
+Job# <%= j.id %> </a><br>
+Description: <%= j.description %><br>
+Cost: <%= j.cost %><br>
+How many Containers Needed: <%= j.containers_needed %><br>
+Boat ID: <%= j.boat_id %><br>
+User ID: <%= j.user_id %>
+ <br>
+ <hr>
+
+ <% end %>
