@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   def index
-  	@job= Job.all
+  	@jobs= Job.all
   end
 
   def new
@@ -10,13 +10,13 @@ class JobsController < ApplicationController
 
   def create
   	@job = Job.new(job_params)
-    @job.user_id = current_user.id 
+    @job.user_id = current_user.id
     if @job.save
       redirect_to "/jobs/"
     else
       render "/jobs/new"
     end
-  end 
+  end
 
   def edit
     @job = Job.find(params[:id])
@@ -25,11 +25,11 @@ class JobsController < ApplicationController
 
   def update
     @job = Job.find(params[:id])
-    @job.user_id = current_user.id 
+    @job.user_id = current_user.id
     if @job.update(job_params)
       redirect_to "/jobs/"
     else
-      redirect_to "/jobs/#{job_id}/edit" 
+      redirect_to "/jobs/#{job_id}/edit"
     end
   end
 
