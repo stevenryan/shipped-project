@@ -1,8 +1,12 @@
 <h1>Add a new boat</h1>
 
-<%= form_for @boat do |b| %>
+<%= form_for Boat.new do |b| %>
 	Boat name:<%= b.text_field :name %><br>
 	Boat location: <%= b.text_field :location %><br>
 	# of containers<%= b.text_field :containers %><br>
 	<%= b.submit 'Create boat' %>
-	<% end %>
+	<br>
+	<div id="errormessage"><%= @boat.errors.full_messages.first if @boat && @boat.errors.any? %></div>
+<% end %>
+
+
