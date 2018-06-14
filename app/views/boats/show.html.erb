@@ -1,5 +1,6 @@
 <div><h1><strong><%= @boat.name%></strong></h1></div>
 <div>Owned by: <%= @boat.user.name %></div>
+<div><%= image_tag @boat.image.url(:large)%></div>
 <br>
 
 <div class="">
