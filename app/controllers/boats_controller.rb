@@ -12,12 +12,12 @@ class BoatsController < ApplicationController
   end
 
   def create
-  	boat = Boat.new(boat_params)
-    boat.user_id = current_user.id
-    if boat.save
+  	@boat = Boat.new(boat_params)
+    @boat.user_id = current_user.id
+    if @boat.save
       redirect_to "/users/#{current_user.id}"
     else
-      render '/boats/new'
+      render "/boats/new"
     end
   end
 
