@@ -36,13 +36,6 @@ ActiveRecord::Schema.define(version: 2018_06_14_183539) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "posts", force: :cascade do |t|
-    t.string "image"
-    t.string "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "schedules", force: :cascade do |t|
     t.datetime "date"
     t.string "origin"
