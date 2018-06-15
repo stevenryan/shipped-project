@@ -17,6 +17,9 @@
  			 	<div><strong>Boat location:</strong> <%=  b.location %></div>
  			 	<div><strong>Number of containers:</strong> <%=  b.containers %></div><br>
 
+				<% if b.image.url != "/images/original/missing.png" %>
+				<div class='imageShowPage'><%= image_tag b.image.url(:large) %></div>
+				<% end %>
 	    </div>
 	  </div>
 
