@@ -5,5 +5,6 @@
 	<div><strong>Owner:</strong> <%= b.user.name %></div>
 	<div><strong>Boat location:</strong> <%=  b.location %></div>
 	<div><strong>Number of containers:</strong> <%=  b.containers %></div><br>
+	<div><strong>created at: </strong><%= b.created_at.strftime("%Y-%m-%d") %></div>
 	<div class='thumb_image'><%= image_tag b.image.url(:thumb) %></div><br>
 	<% end %>
