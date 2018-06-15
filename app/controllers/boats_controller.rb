@@ -1,6 +1,6 @@
 class BoatsController < ApplicationController
   def index
-  	@boats = Boat.all
+  	@boats = Boat.all.order("created_at DESC")
   end
 
   def new
@@ -30,7 +30,7 @@ class BoatsController < ApplicationController
   	private
 
   	def boat_params
-  	params.require(:boat).permit(:name, :location, :containers, :user_id, :job_id)
+  	params.require(:boat).permit(:name, :location, :containers, :user_id, :job_id, :image)
   	end
 
 end
