@@ -5,7 +5,7 @@
  Origin: <%= f.text_field :origin %><br>
  Destiation: <%= f.text_field :destination %><br>
  Date: <%= f.datetime_field :date %><br>
- Choose Your Boat <%= f.select :boat_id, options_from_collection_for_select( @boats, "id", "name") %><br>
+ Choose Your Boat <%= f.select :boat_id, @options_from_collection_for_select( @boats, "id", "name"), :input_html => { class: "form-control" } %><br>
  <%= hidden_field_tag "job_id", @job.id %><br>
  <%= f.submit "Create A Job" %>
- <% end %>	
+ <% end %>
