@@ -1,6 +1,6 @@
 class Job < ApplicationRecord
   belongs_to :user
-  has_many :schedules
+  has_many :schedules, dependent: :destroy
   has_many :boats, :through => :schedules
 
   validates_numericality_of :cost, greater_than_or_equal_to: 100

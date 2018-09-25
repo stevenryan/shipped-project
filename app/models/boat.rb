@@ -1,6 +1,6 @@
 class Boat < ApplicationRecord
   belongs_to :user
-  has_many :schedules
+  has_many :schedules, dependent: :destroy
   has_many :jobs, :through => :schedules
   validates :name, uniqueness: {message: "This Boat name is already being used"}
   has_attached_file :image, styles: {large: '400x400', medium: '200x200', thumb: '100x100#'}
