@@ -36,7 +36,6 @@ class JobsController < ApplicationController
   def show
      @job = Job.find(params[:id])
      @boats = Boat.all
-     @choice = Boat.find(params[:id]).name + " - " + Boat.find(params[:id]).containers.to_s
   end
 
 
