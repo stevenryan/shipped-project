@@ -2,8 +2,15 @@
 <h5><%= @user.email%></h5>
 <br>
 
-<h4>Boats Owned</h4>
 <% boats = @user.boats %>
+<% jobs = @user.jobs %>
+
+<h4> Jobs Posted </h4>
+<% jobs.each do |j| %>
+  <%= j.description %><br><br>
+<% end %>
+
+<h4>Boats Owned</h4>
 <% boats.each do |b| %>
   <div class="">
     <strong>Name: </strong><%= b.name %>
